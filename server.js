@@ -23,7 +23,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/projects', router.display); 
 app.get('/', router.helloworld);
 app.get('/projects/add', router.add);
-app.post('/projects/add/create', router.create)
+app.post('/projects/add/create', router.create);
+app.post('/projects/:id/remove', router.remove);
+app.get('/projects/:id/view', router.view);
+app.get('/projects/:id/update', router.update);
+app.get('/projects/:id/addtask', router.addtask);
 
 // обработка ошибок 
 app.use(function(err, req, res, next) {

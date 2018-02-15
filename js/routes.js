@@ -1,5 +1,5 @@
 const queries = require('./queries');
-
+const tasks = require('./tasks');
 
 module.exports = {
     display: function (req, res) {
@@ -16,5 +16,21 @@ module.exports = {
     create: function (req, res)
     {
         queries.createproject(req,res);
+    },
+    remove: function (req, res)
+    {
+     queries.removeproject(req,res);
+    },
+    view: function (req, res)
+    {
+        queries.viewproject(req,res);
+    },
+    update: function(req, res)
+    {
+        queries.updateproject(req, res);
+    },
+    addtask: function(req,res)
+    {
+        tasks.add(req, res);
     }
 }
